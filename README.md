@@ -82,3 +82,7 @@ Management science overlaps with operations research, analytics, economics, and 
 ## Scope
 
 This repository is intentionally application-oriented. It is not intended to replace the specialist repositories or serve as a complete optimization-method taxonomy. Its purpose is to present a coherent set of management-science problems and implementations in one place.
+## Licensing
+
+The curated cases retain their source-project license terms. This repository does not impose a single replacement license across all migrated code. See [LICENSING.md](LICENSING.md) and the license file inside each case-study directory before reuse.
+
