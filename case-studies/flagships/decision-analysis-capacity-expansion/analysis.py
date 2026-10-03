@@ -26,8 +26,8 @@ def main() -> None:
         print(f"R={tolerance:4d} -> {choice:15s}")
 
     values = np.asarray(expected_values)
-    figures = Path("figures")
-    figures.mkdir(exist_ok=True)
+    figures = Path(__file__).resolve().parent / "figures"
+    figures.mkdir(parents=True, exist_ok=True)
     plt.figure(figsize=(8, 4.5))
     for i, alternative in enumerate(ALTERNATIVES):
         plt.plot(probabilities, values[:, i], marker="o", label=alternative)
