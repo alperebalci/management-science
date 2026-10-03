@@ -24,8 +24,8 @@ def main() -> None:
     for capacity, contribution in rows:
         print(f"{capacity:7.0f} -> {contribution:10.2f}")
 
-    figures = Path("figures")
-    figures.mkdir(exist_ok=True)
+    figures = Path(__file__).resolve().parent / "figures"
+    figures.mkdir(parents=True, exist_ok=True)
     plt.figure(figsize=(8, 4.5))
     plt.plot(capacities, contributions, marker="o")
     plt.axvline(420.0, linestyle="--", linewidth=1)
