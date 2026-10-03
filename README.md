@@ -44,6 +44,12 @@ management-science/
 ├── README.md
 ├── PORTFOLIO_MAP.md
 └── case-studies/
+    ├── flagships/
+    │   ├── product-mix-capacity-planning/
+    │   ├── capital-budgeting-under-risk/
+    │   ├── facility-location-service-design/
+    │   ├── revenue-management-booking-limits/
+    │   └── decision-analysis-capacity-expansion/
     ├── inventory/
     │   └── seasonal-inventory-planning/
     ├── scheduling/
