@@ -27,8 +27,8 @@ def main() -> None:
             f"open={', '.join(result.open_facilities)}"
         )
 
-    figures = Path("figures")
-    figures.mkdir(exist_ok=True)
+    figures = Path(__file__).resolve().parent / "figures"
+    figures.mkdir(parents=True, exist_ok=True)
     plt.figure(figsize=(8, 4.5))
     plt.plot(demand_scales, total_costs, marker="o")
     plt.axvline(1.0, linestyle="--", linewidth=1)
