@@ -23,6 +23,20 @@ Rather than duplicating the full research portfolio, this repository collects a 
 
 The implementations live under `case-studies/`. Each case keeps its own dependencies and includes provenance back to the original specialist repository.
 
+## Original flagship cases
+
+Five cases were created specifically for this repository to cover Management Science topics that are broader than the migrated specialist examples:
+
+| Flagship | Decision focus | Method |
+|---|---|---|
+| [Product Mix and Capacity Planning](case-studies/flagships/product-mix-capacity-planning/) | Production mix and bottleneck economics | LP, marginal values, sensitivity |
+| [Capital Budgeting Under Risk](case-studies/flagships/capital-budgeting-under-risk/) | Investment portfolio selection | Binary MILP |
+| [Facility Location and Service Design](case-studies/flagships/facility-location-service-design/) | Network footprint and market allocation | Facility-location MILP |
+| [Revenue Management Booking Limits](case-studies/flagships/revenue-management-booking-limits/) | Capacity protection by fare class | EMSR-b and Monte Carlo |
+| [Decision Analysis for Capacity Expansion](case-studies/flagships/decision-analysis-capacity-expansion/) | Strategic choice under uncertainty | EV, utility, EVPI, sensitivity |
+
+See [case-studies/flagships/README.md](case-studies/flagships/README.md) for the flagship index.
+
 ## Repository structure
 
 ```text
