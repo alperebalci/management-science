@@ -11,3 +11,7 @@ These cases were created specifically for this repository to complement the cura
 | [Decision Analysis for Capacity Expansion](decision-analysis-capacity-expansion/) | Which strategic capacity choice is preferred under uncertainty? | EV, regret, utility, EVPI, sensitivity |
 
 The five cases deliberately span optimization, network design, revenue management, and decision analysis rather than concentrating only on mathematical programming.
+
+## Decision-support layer
+
+Each flagship now includes a reproducible `analysis.py`, a pre-rendered SVG sensitivity figure, explicit baseline results, threshold/scenario analysis, and a managerial-insights section. The intent is to show not only the optimum, but also **why the recommendation changes and which assumptions management should monitor**.
