@@ -35,7 +35,7 @@ Five cases were created specifically for this repository to cover Management Sci
 | [Revenue Management Booking Limits](case-studies/flagships/revenue-management-booking-limits/) | Capacity protection by fare class | EMSR-b and Monte Carlo |
 | [Decision Analysis for Capacity Expansion](case-studies/flagships/decision-analysis-capacity-expansion/) | Strategic choice under uncertainty | EV, utility, EVPI, sensitivity |
 
-See [case-studies/flagships/README.md](case-studies/flagships/README.md) for the flagship index.
+See [case-studies/flagships/README.md](case-studies/flagships/README.md) for the flagship index. Each flagship includes reproducible sensitivity analysis, a rendered decision-support figure, baseline diagnostics, and explicit managerial takeaways.
 
 ## Repository structure
 

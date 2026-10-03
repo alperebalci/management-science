@@ -4,29 +4,58 @@ An original Management Science case study on selecting a portfolio of investment
 
 ## Management question
 
-Which projects should the firm fund this cycle, and how does the optimal portfolio change as the capital budget changes?
+Which projects should the firm fund this cycle, and which constraint is actually limiting portfolio value?
 
 ## Model
 
-A binary mixed-integer model maximizes portfolio NPV subject to:
-
-- total capital expenditure,
-- limited management capacity,
-- portfolio risk exposure,
-- project dependency,
-- mutually exclusive implementation windows.
-
-A budget-frontier analysis re-solves the model over several funding levels.
+A binary mixed-integer model maximizes portfolio NPV subject to total capital expenditure, management capacity, portfolio risk, project dependencies, and mutually exclusive implementation windows.
 
 ## Run
 
 ~~~bash
 pip install -r requirements.txt
 python capital_budgeting.py
+python analysis.py
 ~~~
 
-## Managerial interpretation
+## Baseline result
 
-The case emphasizes that capital budgeting is not simply ranking projects by NPV. Interdependencies, scarce managerial bandwidth, and portfolio risk can make a lower-ranked project part of the optimal portfolio while a high-NPV project is rejected.
+Recommended portfolio:
+
+- Automation
+- Analytics Platform
+- Service Expansion
+
+| Metric | Result |
+|---|---:|
+| Total NPV | 540 |
+| Capital used | 340 / 350 |
+| Management capacity | 12 / 12 |
+| Risk score | 8 / 9 |
+
+The important diagnostic is that **management capacity is binding**, while 10 units of capital and 1 unit of risk capacity remain unused.
+
+## Sensitivity analysis
+
+| Capital budget | Optimal NPV |
+|---:|---:|
+| 200 | 330 |
+| 250 | 390 |
+| 300 | 500 |
+| 350 | 540 |
+| 400 | 540 |
+| 450 | 540 |
+
+![Capital budget frontier](figures/budget-frontier.svg)
+
+Risk-limit sensitivity also shows discrete portfolio changes: the optimal NPV rises from 330 at a risk limit of 4, to 490 at 7, and to 540 at 8.
+
+## Managerial insights
+
+- Additional funding has value up to roughly the **350** budget region, but capital is not the binding constraint in the baseline portfolio.
+- Raising the capital budget beyond 350 without increasing managerial bandwidth produces no additional NPV.
+- The portfolio changes discontinuously as constraints relax; capital budgeting is therefore not a simple project ranking exercise.
+- Risk capacity has material option value up to a limit of about **8**. Beyond that level, another constraint dominates.
+- The practical implication is to fund execution capability alongside projects: management attention can be scarcer than money.
 
 All data are synthetic and created specifically for this flagship case.
