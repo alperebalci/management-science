@@ -23,8 +23,8 @@ def main() -> None:
         result = solve_capital_budget(risk_limit=float(limit))
         print(f"{limit:6.0f} -> NPV={value:6.0f} | {', '.join(result.selected)}")
 
-    figures = Path("figures")
-    figures.mkdir(exist_ok=True)
+    figures = Path(__file__).resolve().parent / "figures"
+    figures.mkdir(parents=True, exist_ok=True)
     plt.figure(figsize=(8, 4.5))
     plt.step(budgets, budget_values, where="post", marker="o")
     plt.xlabel("Capital budget")
