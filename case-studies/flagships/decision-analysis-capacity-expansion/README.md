@@ -8,23 +8,38 @@ Should management keep the current footprint, lease flexible capacity, or build 
 
 ## Method
 
-The case evaluates three alternatives across low, base, and high demand states using:
-
-- expected monetary value,
-- expected regret,
-- exponential utility and certainty equivalents,
-- expected value of perfect information (EVPI),
-- one-way probability sensitivity.
+The case evaluates three alternatives across low, base, and high demand states using expected monetary value, expected regret, exponential utility and certainty equivalents, EVPI, probability sensitivity, and risk-tolerance sensitivity.
 
 ## Run
 
 ~~~bash
 pip install -r requirements.txt
 python decision_analysis.py
+python analysis.py
 ~~~
 
-## Managerial interpretation
+## Baseline result
 
-A risk-neutral recommendation can differ from a risk-adjusted recommendation because large downside outcomes matter differently to decision makers with finite risk tolerance. EVPI sets an upper bound on what management should pay for perfect demand information, while sensitivity analysis identifies when the preferred strategy changes.
+| Alternative | Expected NPV | Expected regret | Certainty equivalent (R=180) |
+|---|---:|---:|---:|
+| Status Quo | 118.75 | 103.75 | 117.69 |
+| Lease Capacity | 166.25 | 56.25 | 150.97 |
+| Build Facility | 185.00 | 37.50 | 111.71 |
+
+The **risk-neutral** choice is Build Facility, while the **risk-adjusted** choice at risk tolerance 180 is Lease Capacity. EVPI is **37.50**, which is the maximum rational price for perfect demand information under the expected-value criterion.
+
+## Sensitivity analysis
+
+![Probability sensitivity](figures/probability-sensitivity.svg)
+
+When the low/base demand probabilities retain a 1:2 ratio, Build Facility overtakes Lease Capacity at a high-demand probability of approximately **12.4%**. Risk tolerance also matters: the certainty-equivalent preference switches from Lease to Build only at a risk tolerance of roughly **560.5**.
+
+## Managerial insights
+
+- The highest expected-value alternative is not necessarily appropriate for a risk-averse decision maker.
+- Flexible capacity functions as an economic hedge: it sacrifices upside to materially reduce downside exposure.
+- The recommendation is sensitive to beliefs about high demand; probability elicitation is therefore a decision variable in practice, not a clerical input.
+- EVPI provides a disciplined ceiling for spending on market research, pilots, or additional forecasting.
+- Presenting both probability and risk-tolerance thresholds makes the decision auditable: executives can see exactly which assumptions must change before the recommendation flips.
 
 All payoffs and probabilities are synthetic and created specifically for this flagship case.
