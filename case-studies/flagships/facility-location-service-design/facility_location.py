@@ -29,14 +29,22 @@ class FacilityLocationResult:
     utilization: dict[str, float]
 
 
-def solve_facility_location(max_open: int = 3) -> FacilityLocationResult:
-    """Solve a capacitated facility-location MILP."""
+def solve_facility_location(
+    max_open: int = 3,
+    demand_scale: float = 1.0,
+    fixed_cost_scale: float = 1.0,
+) -> FacilityLocationResult:
+    """Solve a capacitated facility-location MILP under scenario scaling."""
+    if demand_scale <= 0 or fixed_cost_scale <= 0:
+        raise ValueError("scenario scale factors must be positive")
     n_fac = len(FACILITIES)
     n_mkt = len(MARKETS)
     n_flow = n_fac * n_mkt
     n_vars = n_flow + n_fac
 
-    c = np.concatenate([SERVICE_COST.ravel(), FIXED_COST])
+    demand = DEMAND * demand_scale
+    fixed_cost_vector = FIXED_COST * fixed_cost_scale
+    c = np.concatenate([SERVICE_COST.ravel(), fixed_cost_vector])
     integrality = np.concatenate([np.zeros(n_flow), np.ones(n_fac)])
     lb = np.zeros(n_vars)
     ub = np.concatenate([np.full(n_flow, np.inf), np.ones(n_fac)])
@@ -50,8 +58,8 @@ def solve_facility_location(max_open: int = 3) -> FacilityLocationResult:
         for i in range(n_fac):
             row[i * n_mkt + j] = 1.0
         rows.append(row)
-        lower.append(DEMAND[j])
-        upper.append(DEMAND[j])
+        lower.append(demand[j])
+        upper.append(demand[j])
 
     for i in range(n_fac):
         row = np.zeros(n_vars)
@@ -78,7 +86,7 @@ def solve_facility_location(max_open: int = 3) -> FacilityLocationResult:
 
     flows = result.x[:n_flow].reshape(n_fac, n_mkt)
     opened = result.x[n_flow:] > 0.5
-    fixed = float(FIXED_COST[opened].sum())
+    fixed = float(fixed_cost_vector[opened].sum())
     service = float((flows * SERVICE_COST).sum())
     utilization = {
         FACILITIES[i]: float(flows[i].sum() / CAPACITY[i])
