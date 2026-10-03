@@ -24,8 +24,8 @@ def main() -> None:
             f"lift={result['revenue_lift']:8.2f}"
         )
 
-    figures = Path("figures")
-    figures.mkdir(exist_ok=True)
+    figures = Path(__file__).resolve().parent / "figures"
+    figures.mkdir(parents=True, exist_ok=True)
     plt.figure(figsize=(8, 4.5))
     plt.plot(capacities, emsr, marker="o", label="EMSR-b")
     plt.plot(capacities, fcfs, marker="o", label="FCFS")
