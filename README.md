@@ -25,7 +25,7 @@ The implementations live under `case-studies/`. Each case keeps its own dependen
 
 ## Original flagship cases
 
-Five cases were created specifically for this repository to cover Management Science topics that are broader than the migrated specialist examples:
+Six cases were created specifically for this repository to cover Management Science topics that are broader than the migrated specialist examples:
 
 | Flagship | Decision focus | Method |
 |---|---|---|
@@ -34,6 +34,7 @@ Five cases were created specifically for this repository to cover Management Sci
 | [Facility Location and Service Design](case-studies/flagships/facility-location-service-design/) | Network footprint and market allocation | Facility-location MILP |
 | [Revenue Management Booking Limits](case-studies/flagships/revenue-management-booking-limits/) | Capacity protection by fare class | EMSR-b and Monte Carlo |
 | [Decision Analysis for Capacity Expansion](case-studies/flagships/decision-analysis-capacity-expansion/) | Strategic choice under uncertainty | EV, utility, EVPI, sensitivity |
+| [Decision Science: Preferences and Information](case-studies/flagships/decision-science-preferences-and-information/) | Preferences, value of imperfect information and scenario robustness | Bayesian EVSI, AHP, MAVT, TOPSIS, scenario regret |
 
 See [case-studies/flagships/README.md](case-studies/flagships/README.md) for the flagship index. Each flagship includes reproducible sensitivity analysis, a rendered decision-support figure, baseline diagnostics, and explicit managerial takeaways.
 
@@ -111,4 +112,8 @@ The curated cases retain their source-project license terms. This repository doe
 
 The [native flagship CI](.github/workflows/flagship-ci.yml) executes testable mathematical invariants for the capacity-expansion decision analysis and revenue-management booking-limit models on Python 3.11/3.12. It checks expected payoffs, EVPI, regret, policy feasibility, input validation and seeded simulation reproducibility.
 
-**Boundary:** this is initial CI coverage for two original flagships, not a claim that every imported `case-studies/` package has been installed or tested. Other cases retain their own dependencies and need independent validation before they can be marked green.
+**Boundary:** this is initial CI coverage for original flagship models, not a claim that every imported `case-studies/` package has been installed or tested. Other cases retain their own dependencies and need independent validation before they can be marked green.
+
+## Normative decision-science methods
+
+The [decision-science flagship](case-studies/flagships/decision-science-preferences-and-information/) adds Bayesian value of sample information, consistent pairwise criterion elicitation, group AHP, normalized multi-attribute value scoring, TOPSIS and probability-free scenario-stress analysis. Its checks distinguish what is **derived from supplied preferences/assumptions** from what is empirically verified.

@@ -9,8 +9,9 @@ These cases were created specifically for this repository to complement the cura
 | [Facility Location and Service Design](facility-location-service-design/) | Which sites should open and how should markets be served? | Capacitated facility-location MILP |
 | [Revenue Management Booking Limits](revenue-management-booking-limits/) | How much capacity should be protected for high-value demand? | EMSR-b, Monte Carlo simulation |
 | [Decision Analysis for Capacity Expansion](decision-analysis-capacity-expansion/) | Which strategic capacity choice is preferred under uncertainty? | EV, regret, utility, EVPI, sensitivity |
+| [Decision Science: Preferences and Information](decision-science-preferences-and-information/) | When is a signal worth acquiring, and how do criteria weights change a decision? | Bayesian EVSI/EVPI, AHP, MAVT, TOPSIS, scenario robustness |
 
-The five cases deliberately span optimization, network design, revenue management, and decision analysis rather than concentrating only on mathematical programming.
+The six cases deliberately span optimization, network design, revenue management, and decision analysis rather than concentrating only on mathematical programming.
 
 ## Decision-support layer
 
