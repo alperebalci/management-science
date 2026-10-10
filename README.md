@@ -106,3 +106,9 @@ This repository is intentionally application-oriented. It is not intended to rep
 
 The curated cases retain their source-project license terms. This repository does not impose a single replacement license across all migrated code. See [LICENSING.md](LICENSING.md) and the license file inside each case-study directory before reuse.
 
+
+## Native flagship CI
+
+The [native flagship CI](.github/workflows/flagship-ci.yml) executes testable mathematical invariants for the capacity-expansion decision analysis and revenue-management booking-limit models on Python 3.11/3.12. It checks expected payoffs, EVPI, regret, policy feasibility, input validation and seeded simulation reproducibility.
+
+**Boundary:** this is initial CI coverage for two original flagships, not a claim that every imported `case-studies/` package has been installed or tested. Other cases retain their own dependencies and need independent validation before they can be marked green.
