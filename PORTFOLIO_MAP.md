@@ -2,6 +2,12 @@
 
 This document separates the curated management-science cases in this repository from the deeper specialist repositories in the wider portfolio.
 
+## Normative decisions and management-science flagships
+
+- [Decision Science: Preferences and Information](case-studies/flagships/decision-science-preferences-and-information/) — Bayesian EVSI, AHP, MAVT, TOPSIS, group judgments and probability-free robustness screening.
+- [Decision Analysis for Capacity Expansion](case-studies/flagships/decision-analysis-capacity-expansion/) — risk attitude, expected regret, EVPI and sensitivity.
+- [Decision Framing and Sequential Decision Modeling](https://github.com/alperebalci/decision-framing-and-sequential-decision-modeling) — decision definitions, stakeholders and information requirements, before solving models.
+
 ## Core management-science domains
 
 | Domain | Specialist repository | Role in this repository |
