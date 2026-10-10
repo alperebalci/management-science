@@ -1,0 +1,12 @@
+schema_version: 1
+repository: management-science
+role: standalone
+axis: application
+area: management-science
+status: active
+owner: jorsacademy
+projects: []
+conventions:
+  provenance_records: true
+  reproducibility_expected: true
+  benchmark_assumptions_documented: true
